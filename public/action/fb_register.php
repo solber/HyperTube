@@ -16,7 +16,7 @@ $fb = new Facebook\Facebook([
 $helper = $fb->getRedirectLoginHelper();
  
 $permissions = ['email']; // Optional information that your app can access, such as 'email'
-$loginUrl = $helper->getReRequestUrl('http://localhost/fb-callback', $permissions);
+$loginUrl = $helper->getReRequestUrl('http://localhost:8080/fb-callback', $permissions);
  
 header('Location: ' .$loginUrl);
 ?>

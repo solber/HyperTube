@@ -1,6 +1,6 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
-
+date_default_timezone_set( 'Europe/Paris' );
 if (file_exists("required/lang.php"))
 {
     require 'required/functions.php';
@@ -10,8 +10,8 @@ else
 {
     header('Location: index');
 }
-
 iConnected();
+
 if (file_exists('../vendor/autoload.php'))
   require_once '../vendor/autoload.php';
 else
@@ -35,8 +35,7 @@ try {
   put_flash('info', $errors[$_SESSION['lang']]['tryagain'], "fb-register");
   exit;
 }
-
-if (! isset($accessToken)) {
+if (!isset($accessToken)) {
   if ($helper->getError()) {
     header('HTTP/1.0 401 Unauthorized');
     echo "Error: " . $helper->getError() . "\n";

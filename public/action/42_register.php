@@ -16,7 +16,7 @@ require('../OAuth2/GrantType/AuthorizationCode.php');
 const CLIENT_ID     = '902304860ae5382831b47ac471ad9b6640e7ce3a209d59c60b0622674957910e';
 const CLIENT_SECRET = 'ed9c896d76be1b5ad6a3abcaaf3dbafc5503c03eebe0fa36423150b59506243c';
 
-const REDIRECT_URI           = 'http://localhost/42-register';
+const REDIRECT_URI           = 'http://localhost:8080/42-register';
 const AUTHORIZATION_ENDPOINT = 'https://api.intra.42.fr/oauth/authorize';
 const TOKEN_ENDPOINT         = 'https://api.intra.42.fr/oauth/token';
 

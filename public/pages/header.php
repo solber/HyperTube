@@ -1,4 +1,5 @@
-<?php if (session_status() == PHP_SESSION_NONE) { session_start(); } date_default_timezone_set( 'Europe/Paris' ); 
+<?php if (session_status() == PHP_SESSION_NONE) { session_start(); } 
+date_default_timezone_set( 'Europe/Paris' ); 
 if (isset($_SESSION['search']))
   $_SESSION['search'] = ""; ?>
 <!DOCTYPE html>

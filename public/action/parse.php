@@ -1,12 +1,13 @@
+<head><meta charset="utf-8"></head>
 <?php
-
+	date_default_timezone_set( 'Europe/Paris' ); 
 	/* debug*/
 	/*require 'required/functions.php';
 	require 'required/database.php';
 	$logpath = "log/log.log";
 	*/
-	if ($_SERVER['HTTP_USER_AGENT'] !== "Wget/1.19.4 (mingw32)")
-		header('Location: http://localhost');
+	//if ($_SERVER['HTTP_USER_AGENT'] !== "Wget/1.19.4 (darwin16.7.0)")
+	//	header('Location: http://localhost:8080');
 	require '../required/functions.php';
 	require '../required/database.php';
 	$logpath = "../log/log.log";
@@ -61,7 +62,14 @@
 
 				if(preg_match('/^[a-zA-Z0-9 !-?:]+$/', $title) && strpos($elem_title, '[Leopard-Raws]') !== false)
 				{
-					$html = file_get_contents("https://www.google.fr/search?q=" .$title_plus ."+cover&tbm=isch");
+					$gurl = "https://www.google.fr/search?q=" .$title_plus ."+cover&tbm=isch";
+
+					$ch = curl_init();
+					curl_setopt($ch, CURLOPT_URL, $gurl);
+					curl_setopt($ch,CURLOPT_USERAGENT,"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13");
+					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+					$html = curl_exec($ch);
+					curl_close($ch);
 					preg_match_all( '|<img.*?src=[\'"](.*?)[\'"].*?>|i',$html, $matches ); 
 					if ($matches[ 1 ][ 0 ]) {
 						$img = $matches[1][0];
@@ -81,11 +89,13 @@
 	}
 
 	/* SECOND FEED - NYAA.SI */
+	/*
 	$xml=simplexml_load_file("https://nyaa.si/?page=rss&q=%5Bleopard-raws%5D&c=0_0&f=0") or die("Error: Cannot create object");
 
 	$log = "";
 	//$req = $pdo->query('DELETE FROM anim');
 	$i = 0;
+
 	foreach ($xml->channel as $key) {
 		foreach ($key as $elem) {
 			if ($i>1)
@@ -130,7 +140,14 @@
 
 				if(preg_match('/^[a-zA-Z0-9 !-?:]+$/', $title) && strpos($elem_title, '[Leopard-Raws]') !== false)
 				{
-					$html = file_get_contents("https://www.google.fr/search?q=" .$title_plus ."+cover&tbm=isch");
+					$gurl = "https://www.google.fr/search?q=" .$title_plus ."+cover&tbm=isch";
+
+					$ch = curl_init();
+					curl_setopt($ch, CURLOPT_URL, $gurl);
+					curl_setopt($ch,CURLOPT_USERAGENT,"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13");
+					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+					$html = curl_exec($ch);
+					curl_close($ch);
 					preg_match_all( '|<img.*?src=[\'"](.*?)[\'"].*?>|i',$html, $matches ); 
 					if ($matches[ 1 ][ 0 ]) {
 						$img = $matches[1][0];
@@ -148,7 +165,7 @@
 			$i++;
 		}
 	}
-
+	*/
 	file_put_contents($logpath, $log);
 
 	function get_http_response_code($url) {
@@ -170,3 +187,4 @@
 
 	    return $data;
 	}
+?>
