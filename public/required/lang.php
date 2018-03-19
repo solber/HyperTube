@@ -22,6 +22,13 @@
 	    "p" => "La page que vous cherchez n'éxiste pas",
 	    "link" => "Accueil",
 	];
+
+	$missing['de_DE'] = [
+	    "header" => "Oops .. wo sind wir ?",
+	    "h3" => "ENTSCHULDIGUNG",
+	    "p" => "Die von Ihnen gesuchte Seite wurde nicht gefunden.",
+	    "link" => "Zurück zur Hauptseite",
+	];
 	/* END 404 */
 
 	/*Account page */
@@ -44,6 +51,16 @@
 		"password" => "Mot de passe",
 		"passwordr" => "Repeter mot de passe",
 	];
+
+	$account['de_DE'] = [
+		"title" => "Mein Konto",
+		"username" => "Benutzername",
+		"profile_pic" => "Profilbild",
+		"fullname" => "Vollständiger Name",
+		"change" => "Ändern",
+		"password" => "Passwort",
+		"passwordr" => "Password wiederholen",
+	];
 	/* END account */
 
 	/* biblio page */
@@ -57,6 +74,12 @@
 		'title' => 'Titre',
 		'previous' => 'Precedent',
 		'next' => 'Suivant',
+	];
+
+	$biblio['de_DE'] = [
+		'title' => 'Titel',
+		'previous' => 'Zurück',
+		'next' => 'Vor',
 	];
 	/* END biblio */
 
@@ -75,6 +98,14 @@
 		'password' => 'Mot de passe',
 		'login' => 'Connexion',
 		'forgot' => 'Mot de passe oublié ?',
+	];
+
+	$login['de_DE'] = [
+		'title' => 'Anmelden',
+		'username' => "Benutzername",
+		'password' => 'Passwort',
+		'login' => 'Login',
+		'forgot' => 'Passwort vergessen ?',
 	];
 	/* END login page */
 
@@ -98,6 +129,16 @@
 		'register' => 'Inscription',
 		'already' => "Vous avez deja un compte ?",
 	];
+
+	$register['de_DE'] = [
+		'title' => 'Registrieren',
+		'username' => 'Benutzername',
+		'fullname' => 'Vollständiger Name',
+		'password' => 'Passwort',
+		'passwordr' => 'Passwort wiederholen',
+		'register' => 'Registrieren',
+		'already' => 'Sie sind schon registriert ?',
+	];
 	/* END register */
 
 	/* reset page */
@@ -109,6 +150,11 @@
 	$reset['fr_FR'] = [
 		'title' => 'Entrer votre mail',
 		'reset' => "Reinitialiserr",
+	];
+
+	$reset['de_DE'] = [
+		'title' => 'E-Mail-Adresse eingeben',
+		'reset' => 'Zurücksetzen',
 	];
 	/* END reset page */
 
@@ -177,6 +223,38 @@
 		'empty_captcha' => "Erreur : Veuillez valider le captcha",
 
 	];
+
+	$errors['de_DE'] = [
+		'empty_fields' => "Error : Bitte alle Felder ausfüllen.",
+		'invalid_size' => "Error : Ungültige Größe.",
+		'invalid_char_alpha_num' => "Error : Nur alphanumerische Zeichen erlaubt.",
+		'invalid_char_alphadash' => "Error : Nur - und alphanumerische Zeichen erlaubt.",
+		'invalid_password' => "Error : Ungültiges Passwort.",
+		'taken_username' => "Error : Benutzername bereits vergeben !",
+		'taken_email' => "Error : E-Mail nicht verfügbar !",
+		'success_modified' => "Daten geändert !",
+		'size_password' => "Error : Ungültige Passwortlänge.",
+		'same_password' => 'Error : Passwörter stimmen nicht überein !',
+		'modified_password' => "Password geändert !",
+		'invalid_arguments' => 'Error : Eingabe ungültig.',
+		'comment_id_not_exists' => "Error : Kommentar-ID existiert nicht !",
+		'tryagain' => "Bitte erneut versuchen !",
+		'bad_request' => "Error : Ungültige Anforderung.",
+		'email_permission' => "Error : E-Mail Erlaubnis verweigert",
+		'logreagain' => "Erneut anmelden ODER Registrierung abschließen.",
+		'alreadylinked' => "Error : Benutzer schon anderweitig verbunden.",
+		'impossible_dbrequest' => "Error : Datenbankanfrage konnte nicht durchgefürt werden",
+		'account_created' => "Success : Account erstellt ! Bitte einloggen !",
+		"empty_post" => "Error : POST leer",
+		'logout' => 'Error : Zugriff verweigert.',
+		'invalid_mid' => "Error : Ungültige m_ID !",
+		'invalid_comment' => "Error : Ungültiger Kommentar.",
+		'mail_not_found' => "Error : E-Mail-Adresse konnte nicht gefunden werden !",
+		'impossible_sendmail' => "Error : E-Mail konnte nicht gesendet werden.",
+		'mail_sent' => "Info : Neues Passwort wurde an Ihre E-Mail-Adresse gesendet !",
+		'wrong_id' => 'Error : Ungültige ID.',
+		'empty_captcha' => "Error : Bitte Captcha lösen.",
+	];
 	/* END errors */
 
 	/* load_anim */
@@ -184,8 +262,8 @@
 		'elements' => "No more elements",
 		'watched' => "Watched",
 		'syno' => "No synopsis for this one.",
-		'downloaded' => "Downloaded on server",
-		'being' => "Being downloading by the server ..",
+		'downloaded' => "Available on the server",
+		'being' => "Being downloaded...",
 		'rdy' => "Ready to download",
 	];
 
@@ -196,7 +274,16 @@
 		'downloaded' => "Disponible sur le serveur",
 		'being' => "En cours de téléchargement ..",
 		'rdy' => "Pret a télécharger.",
-	];		
+	];
+
+	$load['de_DE'] = [
+		'elements' => "Keine weiteren Elemente",
+		'watched' => "Gesehen",
+		'syno' => "Keine Zusammenfassung verfügbar.",
+		'downloaded' => "Am Server verfügbar",
+		'being' => "Am herunterladen..",
+		'rdy' => "Bereit zum Herunterladen",
+	];
 	/* END load */
 
 	/* page uprofile */
@@ -210,6 +297,12 @@
 		'lv' => "Rien",
 		'lvl' => "Aucun",
 		'last_viewed' => "Dernierement vu",
+	];
+
+	$uprofile['de_DE'] = [
+		'lv' => "Nichts",
+		'lvl' => "Keine",
+		'last_viewed' => "Zuletzt angesehen",
 	];
 
 
