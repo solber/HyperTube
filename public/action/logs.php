@@ -1,3 +1,9 @@
+<style type="text/css">
+	body{
+		background-color: rgb(53, 53, 53)!important;
+		color: white;
+	}
+</style>
 <?php 
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
 if (!isset($_SESSION['auth']) || $_SESSION['auth']->username !== "admin")
