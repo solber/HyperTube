@@ -46,6 +46,9 @@ if (isset($_SESSION['search']))
               <li class="nav-item">
                 <a class="nav-link" href="logs"><i class="far fa-file-alt fa-2x" style="color: rgb(100, 150, 200);"></i></a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="parse"><i class="fas fa-sync-alt fa-2x" style="color: rgb(50, 200, 0);"></i></a>
+              </li>
           <?php } ?>
             <?php }else{ ?>
               <li class="nav-item active">

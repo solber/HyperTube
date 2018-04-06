@@ -96,7 +96,15 @@
 					{
 						if (!$res->downloading)
 						{
-							downloadFile($res->magnet, "files/" .$res->id .".torrent");
+							$arrContextOptions=array(
+							    "ssl"=>array(
+							        "verify_peer"=>false,
+							        "verify_peer_name"=>false,
+							    ),
+							);
+							$currfile = file_get_contents($res->magnet, false, stream_context_create($arrContextOptions));
+							file_put_contents("files/" .$res->id .".torrent", $currfile);
+							// downloadFile($res->magnet, "files/" .$res->id .".torrent");
 							$req = $pdo->query("UPDATE anim SET downloading = 1 WHERE id =" .intval($res->id));
 						}	
 						if ($_SESSION['lang'] === "en_EN")

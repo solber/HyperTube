@@ -1,5 +1,4 @@
 <?php
-	
 	if (session_status() == PHP_SESSION_NONE) { session_start(); }
 	$url = '';
 	if (strpos($_SERVER['REQUEST_URI'], '?'))
@@ -35,6 +34,17 @@
 			$_SESSION['auth']->lang = "en_EN";
 		}
 		$_SESSION['lang'] = "en_EN";
+		require 'pages/home.php';
+	}
+	else if ($url[0] === "lang_de_DE")
+	{
+		if (isset($_SESSION['auth']))
+		{
+			require 'required/database.php';
+			$req = $pdo->query("UPDATE users SET lang ='de_DE' WHERE id =" .intval($_SESSION['auth']->id));
+			$_SESSION['auth']->lang = "de_DE";
+		}
+		$_SESSION['lang'] = "de_DE";
 		require 'pages/home.php';
 	}
 	else if ($url[0] === "index")

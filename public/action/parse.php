@@ -1,16 +1,11 @@
 <head><meta charset="utf-8"></head>
 <?php
-	date_default_timezone_set( 'Europe/Paris' ); 
-	/* debug*/
-	/*require 'required/functions.php';
+	date_default_timezone_set( 'Europe/Paris' );
+	if ($_SESSION['auth']->username !== "admin")
+		header('Location: http://localhost:8080');
+	require 'required/functions.php';
 	require 'required/database.php';
 	$logpath = "log/log.log";
-	*/
-	//if ($_SERVER['HTTP_USER_AGENT'] !== "Wget/1.19.4 (darwin16.7.0)")
-	//	header('Location: http://localhost:8080');
-	require '../required/functions.php';
-	require '../required/database.php';
-	$logpath = "../log/log.log";
 
 	/* FIRST FEED - LEOPARD-RAWS */
 	$xml=simplexml_load_file("http://leopard-raws.org/rss.php") or die("Error: Cannot create object");
@@ -89,8 +84,14 @@
 	}
 
 	/* SECOND FEED - NYAA.SI */
-	/*
-	$xml=simplexml_load_file("https://nyaa.si/?page=rss&q=%5Bleopard-raws%5D&c=0_0&f=0") or die("Error: Cannot create object");
+	$arrContextOptions=array(
+	    "ssl"=>array(
+	        "verify_peer"=>false,
+	        "verify_peer_name"=>false,
+	    ),
+	); 
+	$xml = file_get_contents("https://nyaa.si/?page=rss&q=%5Bleopard-raws%5D&c=0_0&f=0", false, stream_context_create($arrContextOptions)) or die("Error: Cannot create object");
+	$xml = simplexml_load_string($xml);
 
 	$log = "";
 	//$req = $pdo->query('DELETE FROM anim');
@@ -165,7 +166,6 @@
 			$i++;
 		}
 	}
-	*/
 	file_put_contents($logpath, $log);
 
 	function get_http_response_code($url) {
@@ -188,3 +188,4 @@
 	    return $data;
 	}
 ?>
+<a href="http://localhost:8080">Go back</a>
