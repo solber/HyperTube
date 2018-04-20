@@ -154,6 +154,7 @@ else
             <div class="row" style="padding-top: 1rem">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
+                    <center><div class="g-recaptcha" data-sitekey="6LdhCkgUAAAAAL-knu5sk6Yy11IHX5iqlBelBk24" name="g-recaptcha-response"></div></center><br>
                     <button type="submit" class="btn btn-success"><i class="fas fa-sign-in-alt"></i> <?php echo $register[$_SESSION['lang']]['register']; ?></button>
                     <a class="btn btn-link" href="login"><?php echo $register[$_SESSION['lang']]['already']; ?></a>
                 </div>

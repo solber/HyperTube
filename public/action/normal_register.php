@@ -2,7 +2,10 @@
 	if (!file_exists("required/database.php"))
 		header("Location: index");
 	if (session_status() == PHP_SESSION_NONE) { session_start(); }
-	require '/required/functions.php';
+
+	if (!file_exists('required/functions.php'))
+		header('Location: localhost:8080');
+	require 'required/functions.php';
 	require 'required/lang.php';
 	iConnected();
 
@@ -30,7 +33,7 @@
 	if ($psw !== $pswr)
 		put_flash('danger', $errors[$_SESSION['lang']]['same_password'], "register");
 
-	require '/required/database.php';
+	require 'required/database.php';
 
 	$req = $pdo->prepare("SELECT * FROM users WHERE username = ?");
 	$req->execute([$username]);

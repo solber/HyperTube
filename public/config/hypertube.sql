@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `anim` (
   `stored_date` datetime DEFAULT NULL,
   `pub_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1653 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=1653 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `anim`
@@ -204,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `anim_note` (
   `emitter` int(11) NOT NULL,
   `anim_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -219,7 +219,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `emitter` int(11) NOT NULL,
   `text` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -233,7 +233,7 @@ CREATE TABLE IF NOT EXISTS `comments_dislike` (
   `emitter` int(11) NOT NULL,
   `comment_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -247,7 +247,7 @@ CREATE TABLE IF NOT EXISTS `comments_like` (
   `emitter` int(11) NOT NULL,
   `comment_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -267,7 +267,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `lang` varchar(5) NOT NULL DEFAULT 'en_EN',
   `last_viewed` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `users`
@@ -289,7 +289,7 @@ CREATE TABLE IF NOT EXISTS `view` (
   `user_id` int(11) NOT NULL,
   `anim_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=455 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=455 DEFAULT CHARSET=utf8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
